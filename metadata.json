@@ -1,0 +1,6 @@
+{
+  "name": "Digital Income Labs",
+  "description": "Premium affiliate marketing portal for side hustles, AI tools, and digital income generation reviews and guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
