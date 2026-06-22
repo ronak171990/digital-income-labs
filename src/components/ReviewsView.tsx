@@ -58,9 +58,9 @@ export default function ReviewsView({ products, onNavigate, onTrackClick }: Revi
 
       {/* Header Info */}
       <div className="text-center max-w-2xl mx-auto space-y-2">
-        <h1 className="font-sans font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+        <h2 className="font-sans font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
           Product Review Laboratory
-        </h1>
+        </h2>
         <p className="text-slate-500 text-sm">
           Browse unbiased audits of trending automation packages, e-commerce softwares, and side hustle boards.
         </p>
