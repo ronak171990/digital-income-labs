@@ -13,7 +13,7 @@ interface SEOHeadProps {
 export default function SEOHead({
   title,
   description,
-  url = "https://digitalincomelabs.com",
+  url = "https://thedigitalincomelabs.com",
   type = "website",
   product,
   article,
@@ -49,7 +49,7 @@ export default function SEOHead({
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Digital Income Labs®",
-      "url": "https://digitalincomelabs.com",
+      "url": "https://thedigitalincomelabs.com",
       "description": "Discover side hustle ideas, AI tools, passive income opportunities, and online business products.",
     };
 
@@ -96,7 +96,7 @@ export default function SEOHead({
           "name": "Digital Income Labs®",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://digitalincomelabs.com/icon.png",
+            "url": "https://thedigitalincomelabs.com/icon.png",
           },
         },
       };
@@ -126,7 +126,7 @@ export function SEOInspectionTools({
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://digitalincomelabs.com/</loc>
+    <loc>https://thedigitalincomelabs.com/</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -134,7 +134,7 @@ export function SEOInspectionTools({
 ${products
   .map(
     (p) => `  <url>
-    <loc>https://digitalincomelabs.com/${p.slug}-review</loc>
+    <loc>https://thedigitalincomelabs.com/${p.slug}-review</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -144,7 +144,7 @@ ${products
 ${articles
   .map(
     (a) => `  <url>
-    <loc>https://digitalincomelabs.com/blog/${a.slug}</loc>
+    <loc>https://thedigitalincomelabs.com/blog/${a.slug}</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
