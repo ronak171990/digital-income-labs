@@ -228,7 +228,7 @@ export default function BlogView({ articles, products = [], selectedArticleSlug,
 
         {/* Dynamic SEO coordinates updates */}
         <Helmet>
-  <title>Blog | The Digital Income Labs</title>
+  <title>Blog | </title>
 
   <meta
     name="description"

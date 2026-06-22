@@ -15,7 +15,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     slug: "smartagentx-bundle",
     name: "SmartAgentX Bundle",
     tagline: "The Complete AI Business Automation System for Agencies, Freelancers, and Entrepreneurs.",
-    shortDescription: "SmartAgentX Bundle is an all-in-one AI-powered business automation platform that helps users automate content creation, lead generation, client acquisition, and business workflows from a centralized dashboard.",
+    shortDescription: "SmartAgentX Bundle is an AI-powered marketing automation platform that transforms any website URL into SEO blog posts, social media content, email campaigns, and traffic-generating marketing assets from one centralized dashboard.",
     category: "AI Tools",
     rating: 4.9,
     officialWebsite: "https://smartagentx.partners/",
@@ -25,50 +25,72 @@ export const INITIAL_PRODUCTS: Product[] = [
     badge: "🔥 Trending",
     featured: true,
     clicks: 142,
-    bestFor: "Marketing Agencies, E-commerce Businesses, SaaS Companies, Customer Support Teams, and Digital Marketers",
+    bestFor: "Affiliate Marketers, Marketing Agencies, Freelancers, Content Creators, Entrepreneurs, and Small Business Owners",
     affiliateDisclosure: "We may earn a commission if you purchase through our links, at no additional cost to you.",
+    score: {
+      overall: 4.9,
+      easeOfUse: 4.8,
+      features: 4.9,
+      valueForMoney: 5.0,
+      support: 4.7
+    },
     pricing: {
       regularPrice: "$367",
       salePrice: "$267",
       couponCode: "SAX100",
       refundPolicy: "30-Day Money-Back Guarantee"
     },
+    cta: {
+      text: "Get SmartAgentX Bundle & Save $100",
+      buttonText: "Claim Discount",
+      couponCode: "SAX100"
+    },  
     review: {
       quickVerdict: "Recommend SmartAgentX Bundle for businesses seeking AI-powered customer support, lead generation, and workflow automation without building custom AI infrastructure.",
       whatIs: "SmartAgentX Bundle is an all-in-one AI-powered business automation platform designed to help users automate content creation, lead generation, client acquisition, and business workflows from a single dashboard. It combines multiple AI tools and automation systems into one ecosystem, helping businesses save time and scale more efficiently.",
       features: [
-        "Multi-Channel Deployment (WhatsApp, SMS, Web Widgets, Voice Calls)",
-        "No-Code Workflow Builder",
-        "AI Voice Agent System",
-        "Knowledge Base & Document Training",
-        "White-Label Portal",
-        "CRM & API Integrations"
+        "Autonomous AI Marketing Agent",
+        "Website-to-Content Campaign Generator",
+        "SEO Blog Content Creation",
+        "Social Media Content Generator",
+        "Email Campaign Generator",
+        "Content Scheduling & Publishing",
+        "Commercial License Included",
+        "Agency Toolkit",
+        "Traffic Growth Framework",
+        "Reseller Rights"
       ],
       benefits: [
-        "Saves customer support hours",
-        "Automates lead follow-ups",
-        "Improves response times",
-        "Reduces operational costs",
-        "Enables agencies to offer AI automation services"
+        "Saves hours of content creation every week",
+        "Generates SEO content automatically",
+        "Creates social posts from any website URL",
+        "Helps attract traffic and leads",
+        "Enables agencies to offer content automation services",
+        "Opens additional income opportunities through reseller rights"
       ],
       whoIsItFor: [
-        "Marketing agencies looking to bundle AI support and lead follow-up services for clients.",
-        "E-commerce businesses seeking to automate customer engagement and order enquiries.",
-        "SaaS companies wishing to deploy intelligent voice and chat agents for tier-1 support.",
-        "Digital marketers aiming to streamline workflows and follow up on leads 24/7."
+        "Affiliate marketers who need SEO content and promotional campaigns quickly.",
+        "Marketing agencies managing content for multiple clients.",
+        "Freelancers offering AI-powered content services.",
+        "Small business owners wanting consistent marketing without hiring a large team.",
+        "Entrepreneurs looking to automate blog posts, emails, and social media content."
       ],
       pros: [
-        "Multi-channel AI deployment",
-        "No-code setup",
-        "White-label capabilities",
-        "Voice and chat automation",
-        "Business workflow automation"
+        "One-time payment with no monthly fees",
+        "Generates blogs, emails, and social media content",
+        "Commercial license included",
+        "Agency toolkit included",
+        "Traffic training included",
+        "Reseller rights available",
+        "Beginner friendly",
+        "30-day money-back guarantee"
       ],
       cons: [
-        "Learning curve for advanced workflows",
-        "Advanced integrations may require basic JSON understanding"
+        "Limited-time promotional pricing",
+        "Some advanced features require experimentation",
+        "Results depend on implementation and marketing strategy"
       ],
-      verdict: "Recommend SmartAgentX Bundle for businesses seeking AI-powered customer support, lead generation, and workflow automation without building custom AI infrastructure.",
+      verdict: "Recommend SmartAgentX Bundle for entrepreneurs and agencies that want to automate content creation, generate traffic, and launch marketing campaigns from any website URL without paying monthly software fees.",
       faqs: [
         {
           question: "Do I need technical skills or coding knowledge to run the automations?",
