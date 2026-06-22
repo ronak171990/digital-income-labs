@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { 
   BarChart as ChartIcon, Layers as ProductIcon, Plus, Link2, BookOpen as BlogIcon, 
   Settings as SettingsIcon, Users as UsersIcon, Trash2, Edit as EditIcon, Save, 
   PlusCircle, CheckCircle, ArrowRightCircle, Sparkles, AlertCircle, FileText, Check, FileCheck
 } from "lucide-react";
 import { Product, Article, NewsletterSubscription, IntegrationSettings } from "../types";
-import { SEOInspectionTools } from "./SEOHead";
 
 interface AdminViewProps {
   products: Product[];

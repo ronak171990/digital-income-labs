@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { 
   Search, BookOpen, Clock, User, ArrowLeft, ArrowRight, Share2, Sparkles,
   AlertTriangle, Award, CheckCircle, ShieldCheck, Users, Video, Palette, 
@@ -6,7 +7,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import { Article, Product } from "../types";
-import SEOHead from "./SEOHead";
+
 
 interface BlogViewProps {
   articles: Article[];
@@ -226,12 +227,19 @@ export default function BlogView({ articles, products = [], selectedArticleSlug,
         </div>
 
         {/* Dynamic SEO coordinates updates */}
-        <SEOHead 
-          title={activeArticle.title}
-          description={activeArticle.excerpt}
-          type="article"
-          article={activeArticle}
-        />
+        <Helmet>
+  <title>Blog | The Digital Income Labs</title>
+
+  <meta
+    name="description"
+    content="Read the latest articles on AI tools, side hustles, passive income ideas and digital products."
+  />
+
+  <link
+    rel="canonical"
+    href="https://thedigitalincomelabs.com/blog"
+  />
+</Helmet>
 
         {/* Hero Section Container */}
         <div className="bg-white border-b border-slate-100 py-10 sm:py-14">
@@ -770,11 +778,19 @@ export default function BlogView({ articles, products = [], selectedArticleSlug,
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 animate-fade-in" id="blog-listing">
       
       {/* SEO metadata */}
-      <SEOHead 
-        title="Side Hustle guides, AI Tools & Passive Income Blog"
-        description="Discover our collection of side hustle reports, AI digital guides, and transparent marketing blueprints to make money online."
-        type="website"
+      <Helmet>
+        <title>Blog | The Digital Income Labs</title>
+
+      <meta
+        name="description"
+        content="Read the latest articles about AI tools, side hustles and passive income opportunities."
       />
+
+      <link
+        rel="canonical"
+        href="https://thedigitalincomelabs.com/blog"
+      />
+      </Helmet>
 
       {/* Header Copy */}
       <div className="text-center max-w-2xl mx-auto space-y-3.5">

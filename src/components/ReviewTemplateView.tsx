@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Star, ShieldCheck, Check, AlertTriangle, ArrowLeft, ExternalLink, Calendar, User, LayoutGrid, Award, CheckSquare, X } from "lucide-react";
 import { Product, Article } from "../types";
-import SEOHead from "./SEOHead";
 
 interface ReviewTemplateViewProps {
   product: Product;
@@ -49,14 +49,22 @@ export default function ReviewTemplateView({
 
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 animate-fade-in" id={`review-page-${product.slug}`}>
-      
+      <Helmet>
+        <title>{product.seoTitle}</title>
+
+        <meta
+          name="description"
+          content={product.shortDescription}
+        />
+
+        <link
+          rel="canonical"
+          href={`https://thedigitalincomelabs.com/reviews/${product.slug}`}
+        />
+        </Helmet>
+
       {/* Dynamic SEO Injector */}
-      <SEOHead 
-        title={product.seoTitle || `${product.name}™ | Official Site #1 – Features, Pricing & Verdict | Digital Income Labs`}
-        description={`Read our complete 2026 expert review on ${product.name}. We analyze the system features, pricing modules, list pros & cons, and give our final verdict.`}
-        type="product"
-        product={product}
-      />
+      
 
       {/* Back and Breadcrumbs Navigation */}
       <div className="space-y-4 pb-4 border-b border-slate-100">
