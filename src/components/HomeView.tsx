@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { 
   ArrowRight, Sparkles, BookOpen, User, Calendar, Clock, 
   CheckCircle, Briefcase, Cpu, TrendingUp, DollarSign, Layers, Tv, Mail 
@@ -155,6 +156,24 @@ export default function HomeView({
   ];
 
   return (
+    <>
+    <Helmet>
+      <title>
+        The Digital Income Labs | AI Tools & Make Money Online
+      </title>
+
+      <meta
+        name="description"
+        content="Discover AI tools, side hustles, passive income ideas, and honest digital product reviews at The Digital Income Labs."
+      />
+
+      <link rel="canonical" href="https://thedigitalincomelabs.com/" />
+    </Helmet>
+
+    <h1 className="sr-only">
+      The Digital Income Labs
+    </h1>
+
     <div className="space-y-12 pb-20 animate-fade-in" id="homepage-root">
       
       {/* SECTION 1: Premium Interactive Hero Section (Reduced Padding to align higher) */}
@@ -760,5 +779,6 @@ export default function HomeView({
       </section>
 
     </div>
-  );
+</>
+);
 }

@@ -4,6 +4,19 @@ import { Product } from "../types";
 import ProductCard from "./ProductCard";
 import SEOHead from "./SEOHead";
 
+
+<Helmet>
+  <title>Digital Product Reviews | The Digital Income Labs</title>
+  <meta
+    name="description"
+    content="Read honest reviews of AI tools, affiliate marketing software, and make money online products."
+  />
+</Helmet>
+
+<h1 className="sr-only">
+  Digital Product Reviews
+</h1>
+
 interface ReviewsViewProps {
   products: Product[];
   onNavigate: (view: string, params?: any) => void;
