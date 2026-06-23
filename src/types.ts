@@ -31,6 +31,20 @@ export interface ReviewSection {
   notIdealFor?: string[];
 }
 
+export interface ProductScore {
+  overall: number;
+  easeOfUse: number;
+  features: number;
+  valueForMoney: number;
+  support: number;
+}
+
+export interface ProductCTA {
+  text: string;
+  buttonText: string;
+  couponCode?: string;
+}
+
 export interface Product {
   id: string;
   slug: string; // e.g. "smartagentx-bundle"
@@ -47,6 +61,8 @@ export interface Product {
   featured: boolean;
   clicks: number;
   pricing: ProductPricing;
+  score?: ProductScore;
+  cta?: ProductCTA;
   couponCode?: string;
   regularPrice?: string;
   discountPrice?: string;

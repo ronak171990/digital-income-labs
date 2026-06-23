@@ -448,6 +448,83 @@ export default function ReviewTemplateView({
             )}
           </section>
 
+          {/* SECTION 7: Our Rating */}
+{product.score && (
+  <section className="space-y-6 bg-white border border-slate-200 p-6 rounded-2xl">
+    <h2 className="font-sans font-extrabold text-2xl text-slate-900 tracking-tight">
+      ⭐ Our Rating
+    </h2>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="p-4 bg-slate-50 rounded-xl">
+        <span className="text-xs text-slate-500">Overall</span>
+        <p className="text-2xl font-black text-blue-600">
+          {product.score.overall}/5
+        </p>
+      </div>
+
+      <div className="p-4 bg-slate-50 rounded-xl">
+        <span className="text-xs text-slate-500">Ease of Use</span>
+        <p className="text-xl font-bold">
+          {product.score.easeOfUse}/5
+        </p>
+      </div>
+
+      <div className="p-4 bg-slate-50 rounded-xl">
+        <span className="text-xs text-slate-500">Features</span>
+        <p className="text-xl font-bold">
+          {product.score.features}/5
+        </p>
+      </div>
+
+      <div className="p-4 bg-slate-50 rounded-xl">
+        <span className="text-xs text-slate-500">
+          Value For Money
+        </span>
+        <p className="text-xl font-bold">
+          {product.score.valueForMoney}/5
+        </p>
+      </div>
+
+      <div className="p-4 bg-slate-50 rounded-xl sm:col-span-2">
+        <span className="text-xs text-slate-500">Support</span>
+        <p className="text-xl font-bold">
+          {product.score.support}/5
+        </p>
+      </div>
+    </div>
+  </section>
+)}
+
+          {/* SECTION 8: Special Offer */}
+{product.cta && (
+  <section className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-center text-white space-y-4">
+    <h2 className="font-sans font-extrabold text-2xl">
+      {product.cta.text}
+    </h2>
+
+    {product.cta.couponCode && (
+      <div className="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-lg">
+        <span>Coupon Code:</span>
+        <span className="font-mono font-black">
+          {product.cta.couponCode}
+        </span>
+      </div>
+    )}
+
+    <a
+      href={product.affiliateLink}
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      onClick={handleOutboundClick}
+      className="inline-flex items-center gap-2 bg-white text-blue-700 px-6 py-3 rounded-xl font-extrabold hover:scale-105 transition"
+    >
+      {product.cta.buttonText}
+      <ExternalLink className="h-4 w-4" />
+    </a>
+  </section>
+)}
+
           {/* SECTION 7: My Verdict */}
           <section className="space-y-4">
             <h2 className="font-sans font-extrabold text-2xl text-slate-900 tracking-tight">

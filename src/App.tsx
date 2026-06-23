@@ -29,6 +29,7 @@ export default function App() {
   // Core Persisted Database State
   const [products, setProducts] = useState<Product[]>([]);
   const [articles, setArticles] = useState<Article[]>([]);
+  console.log(products);
   const [subscribers, setSubscribers] = useState<NewsletterSubscription[]>([]);
   const [settings, setSettings] = useState<IntegrationSettings>({
     googleAnalyticsId: "G-LABS2026",
