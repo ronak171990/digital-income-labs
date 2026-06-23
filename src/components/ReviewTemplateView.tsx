@@ -522,10 +522,16 @@ export default function ReviewTemplateView({
       {product.cta.buttonText}
       <ExternalLink className="h-4 w-4" />
     </a>
+      <div className="flex justify-center gap-4 text-xs text-white/80 mt-4">
+  <span>🔒 Secure Checkout</span>
+  <span>💳 One-Time Payment</span>
+  <span>🛡️ 30-Day Guarantee</span>
+</div>
+
   </section>
 )}
 
-          {/* SECTION 7: My Verdict */}
+    {/* SECTION 7: My Verdict */}
           <section className="space-y-4">
             <h2 className="font-sans font-extrabold text-2xl text-slate-900 tracking-tight">
               My Verdict
@@ -534,6 +540,8 @@ export default function ReviewTemplateView({
               "{r.verdict}"
             </p>
           </section>
+
+          
 
           {/* SECTION 8: Frequently Asked Questions */}
           <section className="space-y-4">
