@@ -21,6 +21,8 @@ import BlogView from "./components/BlogView";
 import AdminView from "./components/AdminView";
 import StaticPages from "./components/StaticPages";
 
+const DATA_VERSION = "1.0.0";
+
 export default function App() {
   // Navigation State
   const [currentView, setCurrentView] = useState<string>("home");
@@ -41,36 +43,49 @@ export default function App() {
   useEffect(() => {
     // 1. Products
     const storedProducts = localStorage.getItem("labs_products");
-    if (storedProducts) {
-      try {
-        const parsed = JSON.parse(storedProducts);
-        const isLegacy = parsed.length !== INITIAL_PRODUCTS.length || parsed.some((p: any) => !p.pricing || typeof p.pricing !== 'object' || !p.officialWebsite || (p.slug === 'smartagentx-bundle' && !p.bestFor) || (p.slug === 'onemanarmy-ai-bundle' && !p.pricing.tiers) || (p.slug === 'shopreelai-premium' && (!p.pricing.tiers || p.pricing.salePrice === '$67')) || (p.slug === '7-figure-accelerator' && (!p.pricing.tiers || p.pricing.regularPrice === '$497')) || (p.slug === 'get-paid-to-review-apps' && (p.pricing.salePrice === '$27' || !p.seoTitle)) || (p.slug === 'get-paid-to-use-facebook-twitter-youtube' && p.pricing.regularPrice === '$37') || (p.slug === 'vid-fortune-ai' && (!p.seoTitle || p.pricing.regularPrice === '$97')) || (p.slug === 'youtube-content-king' && (!p.seoTitle || p.pricing.salePrice === '$97')));
-        if (isLegacy) {
-          setProducts(INITIAL_PRODUCTS);
-          localStorage.setItem("labs_products", JSON.stringify(INITIAL_PRODUCTS));
-        } else {
-          setProducts(parsed);
-        }
-      } catch (e) {
-        setProducts(INITIAL_PRODUCTS);
-      }
-    } else {
-      setProducts(INITIAL_PRODUCTS);
-      localStorage.setItem("labs_products", JSON.stringify(INITIAL_PRODUCTS));
-    }
+const storedVersion = localStorage.getItem("labs_data_version");
+
+if (
+  !storedProducts ||
+  storedVersion !== DATA_VERSION
+) {
+  setProducts(INITIAL_PRODUCTS);
+
+  localStorage.setItem(
+    "labs_products",
+    JSON.stringify(INITIAL_PRODUCTS)
+  );
+
+  localStorage.setItem(
+    "labs_data_version",
+    DATA_VERSION
+  );
+} else {
+  setProducts(JSON.parse(storedProducts));
+}
 
     // 2. Articles
     const storedArticles = localStorage.getItem("labs_articles");
-    if (storedArticles) {
-      try {
-        setArticles(JSON.parse(storedArticles));
-      } catch (e) {
-        setArticles(INITIAL_ARTICLES);
-      }
-    } else {
-      setArticles(INITIAL_ARTICLES);
-      localStorage.setItem("labs_articles", JSON.stringify(INITIAL_ARTICLES));
-    }
+const storedVersion = localStorage.getItem("labs_data_version");
+
+if (
+  !storedArticles ||
+  storedVersion !== DATA_VERSION
+) {
+  setArticles(INITIAL_ARTICLES);
+
+  localStorage.setItem(
+    "labs_articles",
+    JSON.stringify(INITIAL_ARTICLES)
+  );
+
+  localStorage.setItem(
+    "labs_data_version",
+    DATA_VERSION
+  );
+} else {
+  setArticles(JSON.parse(storedArticles));
+}
 
     // 3. Subscribers
     const storedSubscribers = localStorage.getItem("labs_subscribers");
