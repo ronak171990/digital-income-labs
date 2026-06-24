@@ -27,6 +27,15 @@ export interface ReviewSection {
   cons: string[];
   verdict: string;
   faqs: { question: string; answer: string }[];
+  comparison?: {
+    feature: string;
+    oneManArmy: boolean | string;
+    traditionalTools: boolean | string;
+  }[];
+  useCases?: {
+    title: string;
+    description: string;
+  }[];
   recommendedFor?: string[];
   notIdealFor?: string[];
 }

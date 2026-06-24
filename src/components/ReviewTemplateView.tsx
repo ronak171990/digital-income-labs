@@ -47,6 +47,10 @@ export default function ReviewTemplateView({
 
   const r = product.review;
 
+console.log("Slug:", product.slug);
+console.log("Product:", product);
+console.log("Review:", product.review);
+
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 animate-fade-in" id={`review-page-${product.slug}`}>
       <Helmet>
@@ -324,6 +328,54 @@ export default function ReviewTemplateView({
               </>
             )}
           </section>
+
+          {/* SECTION: Comparison Table */}
+{r.comparison && r.comparison.length > 0 && (
+  <section className="space-y-4">
+    <h2 className="font-sans font-extrabold text-2xl text-slate-900 tracking-tight">
+      {product.name} vs Traditional AI Tools
+    </h2>
+
+    <div className="overflow-hidden rounded-2xl border border-slate-200">
+      <table className="w-full text-sm">
+        <thead className="bg-slate-50">
+          <tr>
+            <th className="p-4 text-left">Feature</th>
+            <th className="p-4 text-center">{product.name}</th>
+            <th className="p-4 text-center">Traditional Tools</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {r.comparison.map((item, idx) => (
+            <tr
+              key={idx}
+              className="border-t border-slate-100"
+            >
+              <td className="p-4 font-semibold">
+                {item.feature}
+              </td>
+
+              <td className="p-4 text-center">
+                {item.oneManArmy === true
+                  ? "✅"
+                  : item.oneManArmy}
+              </td>
+
+              <td className="p-4 text-center">
+                {item.traditionalTools === true
+                  ? "✅"
+                  : item.traditionalTools === false
+                  ? "❌"
+                  : item.traditionalTools}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+)}
 
           {/* SECTION 5: Pros & Cons */}
           <section className="space-y-4">
