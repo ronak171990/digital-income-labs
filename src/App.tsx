@@ -40,91 +40,98 @@ export default function App() {
   });
 
   // Initial Load from localStorage
-  useEffect(() => {
-    // 1. Products
-    const storedProducts = localStorage.getItem("labs_products");
-const storedVersion = localStorage.getItem("labs_data_version");
-
-if (
-  !storedProducts ||
-  storedVersion !== DATA_VERSION
-) {
-  setProducts(INITIAL_PRODUCTS);
-
-  localStorage.setItem(
-    "labs_products",
-    JSON.stringify(INITIAL_PRODUCTS)
+useEffect(() => {
+  // Data version
+  const storedVersion = localStorage.getItem(
+    "labs_data_version"
   );
 
+  // ======================
+  // 1. Products
+  // ======================
+  const storedProducts =
+    localStorage.getItem("labs_products");
+
+  if (
+    !storedProducts ||
+    storedVersion !== DATA_VERSION
+  ) {
+    setProducts(INITIAL_PRODUCTS);
+
+    localStorage.setItem(
+      "labs_products",
+      JSON.stringify(INITIAL_PRODUCTS)
+    );
+  } else {
+    setProducts(
+      JSON.parse(storedProducts)
+    );
+  }
+
+  // ======================
+  // 2. Articles
+  // ======================
+  const storedArticles =
+    localStorage.getItem("labs_articles");
+
+  if (
+    !storedArticles ||
+    storedVersion !== DATA_VERSION
+  ) {
+    setArticles(INITIAL_ARTICLES);
+
+    localStorage.setItem(
+      "labs_articles",
+      JSON.stringify(INITIAL_ARTICLES)
+    );
+  } else {
+    setArticles(
+      JSON.parse(storedArticles)
+    );
+  }
+
+  // Save current data version
   localStorage.setItem(
     "labs_data_version",
     DATA_VERSION
   );
-} else {
-  setProducts(JSON.parse(storedProducts));
-}
 
-    // 2. Articles
-    const storedArticles = localStorage.getItem("labs_articles");
-const storedVersion = localStorage.getItem("labs_data_version");
+  // ======================
+  // 3. Subscribers
+  // ======================
+  const storedSubscribers =
+    localStorage.getItem(
+      "labs_subscribers"
+    );
 
-if (
-  !storedArticles ||
-  storedVersion !== DATA_VERSION
-) {
-  setArticles(INITIAL_ARTICLES);
-
-  localStorage.setItem(
-    "labs_articles",
-    JSON.stringify(INITIAL_ARTICLES)
-  );
-
-  localStorage.setItem(
-    "labs_data_version",
-    DATA_VERSION
-  );
-} else {
-  setArticles(JSON.parse(storedArticles));
-}
-
-    // 3. Subscribers
-    const storedSubscribers = localStorage.getItem("labs_subscribers");
-    if (storedSubscribers) {
-      try {
-        setSubscribers(JSON.parse(storedSubscribers));
-      } catch (e) {
-        setSubscribers([]);
-      }
-    } else {
-      // Seed a couple demo leads to make admin view look professional immediately
-      const demoSubscribers: NewsletterSubscription[] = [
-        {
-          id: "sub-1",
-          name: "Ronak Patel",
-          email: "ronakpatel171990@gmail.com",
-          timestamp: new Date("2026-06-17T12:00:00Z").toISOString(),
-        },
-        {
-          id: "sub-2",
-          name: "Alice Vance",
-          email: "alice@sideincome.net",
-          timestamp: new Date("2026-06-16T15:30:00Z").toISOString(),
-        }
-      ];
-      setSubscribers(demoSubscribers);
-      localStorage.setItem("labs_subscribers", JSON.stringify(demoSubscribers));
+  if (storedSubscribers) {
+    try {
+      setSubscribers(
+        JSON.parse(storedSubscribers)
+      );
+    } catch {
+      setSubscribers([]);
     }
+  }
 
-    // 4. Settings
-    const storedSettings = localStorage.getItem("labs_settings");
-    if (storedSettings) {
-      try {
-        setSettings(JSON.parse(storedSettings));
-      } catch (e) {
-        // default settings remain
-      }
+  // ======================
+  // 4. Settings
+  // ======================
+  const storedSettings =
+    localStorage.getItem(
+      "labs_settings"
+    );
+
+  if (storedSettings) {
+    try {
+      setSettings(
+        JSON.parse(storedSettings)
+      );
+    } catch {
+      // keep defaults
     }
-  }, []);
+  }
+}, []);
 
   // Sync state modifications to Local Storage beautifully
   const handleUpdateProducts = (updatedProducts: Product[]) => {
