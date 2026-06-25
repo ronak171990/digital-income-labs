@@ -20,6 +20,7 @@ import CategoryView from "./components/CategoryView";
 import BlogView from "./components/BlogView";
 import AdminView from "./components/AdminView";
 import StaticPages from "./components/StaticPages";
+import LeadMagnetView from "./components/LeadMagnetView";
 
 const DATA_VERSION = "1.0.0";
 
@@ -372,6 +373,8 @@ useEffect(() => {
             onDeleteSubscriber={handleDeleteSubscriber}
           />
         );
+      case "free-guide":
+        return <LeadMagnetView />;
 
       case "about":
         return <StaticPages pageType="about" onNavigate={handleNavigate} />;

@@ -220,23 +220,28 @@ export default function HomeView({
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
-              <button
-                onClick={() => onNavigate("reviews")}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-bold tracking-wide shadow-md shadow-blue-200 transition-all cursor-pointer"
-                id="hero-explore-btn"
-              >
-                Explore Reviews
-                <ArrowRight className="h-4 w-4" />
-              </button>
-              
-              <button
-                onClick={() => onNavigate("blog")}
-                className="inline-flex items-center justify-center px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-800 rounded-xl text-sm font-bold border border-slate-200 shadow-sm transition-all cursor-pointer"
-                id="hero-learn-btn"
-              >
-                Read Beginner Guides
-              </button>
-            </div>
+  <button
+    onClick={() => onNavigate("reviews")}
+    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-bold tracking-wide shadow-md shadow-blue-200 transition-all cursor-pointer"
+  >
+    Explore Reviews
+    <ArrowRight className="h-4 w-4" />
+  </button>
+
+  <button
+    onClick={() => onNavigate("blog")}
+    className="inline-flex items-center justify-center px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-800 rounded-xl text-sm font-bold border border-slate-200 shadow-sm transition-all cursor-pointer"
+  >
+    Read Beginner Guides
+  </button>
+
+  <button
+    onClick={() => onNavigate("free-guide")}
+    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl text-sm font-bold shadow-md transition-all cursor-pointer"
+  >
+    📘 Get Free AI Guide
+  </button>
+</div>
 
             {/* Trust Bar below buttons */}
             <div className="flex flex-wrap items-center gap-2.5 pt-3">
