@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function LeadMagnetView() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
@@ -19,6 +20,8 @@ export default function LeadMagnetView() {
   }
 
   try {
+    setLoading(true);
+
     await fetch(
       "https://script.google.com/macros/s/AKfycbwMMNhNta05AtGUveL_vKS00ebCo05wLX69hEAz8TlPA5RYIeCMQLWb9T6lf9Pwu4vA/exec",
       {
@@ -36,8 +39,10 @@ export default function LeadMagnetView() {
 
     setName("");
     setEmail("");
+    setLoading(false);
   } catch (error) {
     console.error(error);
+    setLoading(false);
     alert("Something went wrong.");
   }
 };
@@ -89,10 +94,12 @@ export default function LeadMagnetView() {
 
           <button
             type="submit"
-            className="w-full py-4 rounded-xl text-white font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600"
+            disabled={loading}
+            className="w-full py-4 rounded-xl text-white font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 disabled:opacity-70"
           >
-            Download Free Guide
+            {loading ? "Please wait..." : "Download Free Guide"}
           </button>
+          
         </form>
 
         <p className="text-gray-400 text-sm mt-6">
