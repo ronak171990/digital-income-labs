@@ -170,9 +170,9 @@ export default function HomeView({
       <link rel="canonical" href="https://thedigitalincomelabs.com/" />
     </Helmet>
 
-    <h1 className="sr-only">
+    <div className="sr-only">
       The Digital Income Labs
-    </h1>
+    </div>
 
     <div className="space-y-12 pb-20 animate-fade-in" id="homepage-root">
       

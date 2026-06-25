@@ -6,7 +6,7 @@
   --font-display: "Poppins", "Inter", sans-serif;
 }
 
-@layer utilities {
+@layer utilities {/
   .animate-fade-in {
     animation: fadeIn 0.4s ease-out forwards;
   }
