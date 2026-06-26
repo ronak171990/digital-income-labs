@@ -888,7 +888,62 @@ export const INITIAL_PRODUCTS: Product[] = [
         }
       ]
     }
-  }
+  },
+  {
+  id: "prod-6",
+  slug: "ai-resume-builder-toolkit",
+  name: "AI Resume Builder Toolkit",
+  tagline: "Create ATS-Friendly Resumes and Land More Interviews with AI",
+  shortDescription:
+    "A complete job-seeker toolkit including ATS resume templates, LinkedIn optimization guides, interview preparation, cover letters, and AI prompts.",
+  category: "Digital Products",
+  rating: 4.9,
+  featured: true,
+  affiliateLink: "YOUR_CHECKOUT_LINK",
+  imageUrl: "/images/ai-resume-toolkit.jpg",
+  badge: "🔥 BESTSELLER",
+  bestFor: "Students, Freshers, Career Switchers, Professionals",
+  affiliateDisclosure:
+    "This is our own digital product.",
+
+
+    review: {
+  quickVerdict:
+    "One of the most affordable AI-powered job search toolkits available.",
+  whatIs:
+    "A complete toolkit designed to help job seekers build ATS-friendly resumes and optimize their LinkedIn profiles.",
+  features: [
+    "ATS Resume Templates",
+    "AI Resume Prompts",
+    "LinkedIn Optimization Guide",
+    "Interview Preparation Guide",
+    "Cover Letter Templates",
+    "Resume Power Words"
+  ],
+  benefits: [
+    "Save hours creating resumes",
+    "Increase ATS compatibility",
+    "Improve LinkedIn profile visibility",
+    "Prepare for interviews confidently"
+  ],
+  whoIsItFor: [
+    "Freshers",
+    "Students",
+    "Career Switchers",
+    "Professionals"
+  ],
+  pros: [
+    "Affordable",
+    "Easy to use",
+    "Instant download"
+  ],
+  cons: [
+    "Digital product only"
+  ],
+  verdict:
+    "Highly recommended for anyone actively looking for a job."
+}
+}
 ];
 
 export const INITIAL_ARTICLES: Article[] = [

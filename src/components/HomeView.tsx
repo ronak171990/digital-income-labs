@@ -339,6 +339,93 @@ export default function HomeView({
         </div>
       </section>
 
+      {/* AI Resume Builder Toolkit Banner */}
+<section className="max-w-7xl mx-auto px-6 py-20">
+  <div className="grid lg:grid-cols-5 gap-12 items-center">
+
+    {/* LEFT SIDE - 40% */}
+    <div className="lg:col-span-2">
+
+      <span className="inline-flex items-center gap-1 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide mb-5">
+  🚀 New Digital Product
+</span>
+
+      <h2 className="text-4xl font-bold leading-tight mb-6">
+        AI Resume
+        <br />
+        <span className="text-purple-600">
+          Builder Toolkit
+        </span>
+      </h2>
+
+      <p className="text-gray-600 text-m leading-relaxed mb-8">
+        Build ATS-friendly resumes and optimize your LinkedIn profile using AI.
+      </p>
+
+      <div className="space-y-3 text-sm mb-10">
+        <p>📄 10+ ATS Resume Templates</p>
+        <p>🤖 50+ AI Resume Prompts</p>
+        <p>💼 LinkedIn Optimization Guide</p>
+        <p>🎯 HR Interview Guide</p>
+        <p>✍️ 10+ Cover Letter Templates</p>
+        <p>📈 200+ Resume Power Words</p>
+        <p>📋 ATS Resume Checklist</p>
+      </div>
+
+      <div className="mb-8">
+        <p className="text-gray-500 mb-2">
+          Launch Price
+        </p>
+
+        <div className="flex items-center gap-4 flex-wrap">
+          <span className="text-4xl font-bold text-purple-600">
+            $5.99
+          </span>
+
+          <span className="text-1xl text-gray-400 line-through">
+            $84
+          </span>
+
+          <span className="bg-red-100 text-red-600 px-4 py-2 rounded-full font-bold">
+            93% OFF
+          </span>
+        </div>
+      </div>
+
+      <button
+  onClick={() =>
+    window.open(
+      "https://ronakstar60.gumroad.com/l/wxklgf",
+      "_blank"
+    )
+  }
+  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-5 rounded-2xl text-xl font-bold shadow-lg hover:scale-105 transition w-fit"
+>
+  🚀 Get Instant Access for $5.99
+</button>
+
+      <div className="flex flex-wrap gap-6 text-gray-500 text-sm mt-6">
+        <span>⚡ Instant Download</span>
+        <span>∞ Lifetime Access</span>
+        <span>🔒 Secure Payment</span>
+      </div>
+
+    </div>
+
+    {/* RIGHT SIDE - 60% */}
+    <div className="lg:col-span-3 flex justify-center">
+
+      <img
+        src="/images/ai-resume-toolkit.png"
+        alt="AI Resume Builder Toolkit"
+        className="w-full max-w-5xl rounded-3xl shadow-2xl"
+      />
+
+    </div>
+
+  </div>
+</section>        
+
       {/* Trust Statement Bar directly below the hero section */}
       <div className="text-center py-4 bg-slate-50/65 border-b border-slate-100">
         <p className="text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-widest flex items-center justify-center gap-3 sm:gap-6 flex-wrap">
