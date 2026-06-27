@@ -288,7 +288,7 @@ console.log("Review:", product.review);
                     Recommended For
                   </span>
                   <ul className="space-y-2.5">
-                    {r.recommendedFor.map((item, idx) => (
+                    {r.recommendedFor?.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-slate-700 text-xs text-left">
                         <Check className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
                         <span className="font-semibold">{item}</span>
@@ -303,7 +303,7 @@ console.log("Review:", product.review);
                     Not Ideal For
                   </span>
                   <ul className="space-y-2.5">
-                    {r.notIdealFor.map((item, idx) => (
+                    {r.notIdealFor?.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-slate-600 text-xs text-left">
                         <X className="h-4 w-4 text-rose-500 shrink-0 mt-0.5" />
                         <span>{item}</span>
@@ -329,53 +329,65 @@ console.log("Review:", product.review);
             )}
           </section>
 
-          {/* SECTION: Comparison Table */}
-{r.comparison && r.comparison.length > 0 && (
-  <section className="space-y-4">
-    <h2 className="font-sans font-extrabold text-2xl text-slate-900 tracking-tight">
-      {product.name} vs Traditional AI Tools
-    </h2>
+          {/* SECTION: Comparison */}
+<section className="space-y-4">
+  <h2 className="font-sans font-extrabold text-2xl text-slate-900 tracking-tight">
+    Comparison
+  </h2>
 
-    <div className="overflow-hidden rounded-2xl border border-slate-200">
-      <table className="w-full text-sm">
-        <thead className="bg-slate-50">
-          <tr>
-            <th className="p-4 text-left">Feature</th>
-            <th className="p-4 text-center">{product.name}</th>
-            <th className="p-4 text-center">Traditional Tools</th>
+  <span className="text-xs text-slate-400 block mb-2">
+    We compared the key capabilities and pricing to help you evaluate this product objectively:
+  </span>
+
+  <div className="overflow-x-auto">
+    <table className="w-full border border-slate-200 rounded-2xl overflow-hidden bg-white">
+      <thead className="bg-slate-50">
+        <tr className="border-b border-slate-200">
+          <th className="p-4 text-left text-xs font-extrabold uppercase tracking-wider text-slate-700">
+            Feature
+          </th>
+
+          <th className="p-4 text-center text-xs font-extrabold uppercase tracking-wider text-slate-700">
+            {product.name}
+          </th>
+
+          <th className="p-4 text-center text-xs font-extrabold uppercase tracking-wider text-slate-700">
+            Traditional Tools
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {r.comparison?.map((item, idx) => (
+          <tr
+            key={idx}
+            className="border-b border-slate-100 hover:bg-slate-50 transition-colors"
+          >
+            <td className="p-4 text-sm font-semibold text-slate-700">
+              {item.feature}
+            </td>
+
+            <td className="p-4 text-center text-sm font-medium text-slate-700">
+              {item.oneManArmy === true
+                ? "✅"
+                : item.oneManArmy === false
+                ? "❌"
+                : item.oneManArmy}
+            </td>
+
+            <td className="p-4 text-center text-sm font-medium text-slate-700">
+              {item.traditionalTools === true
+                ? "✅"
+                : item.traditionalTools === false
+                ? "❌"
+                : item.traditionalTools}
+            </td>
           </tr>
-        </thead>
-
-        <tbody>
-          {r.comparison.map((item, idx) => (
-            <tr
-              key={idx}
-              className="border-t border-slate-100"
-            >
-              <td className="p-4 font-semibold">
-                {item.feature}
-              </td>
-
-              <td className="p-4 text-center">
-                {item.oneManArmy === true
-                  ? "✅"
-                  : item.oneManArmy}
-              </td>
-
-              <td className="p-4 text-center">
-                {item.traditionalTools === true
-                  ? "✅"
-                  : item.traditionalTools === false
-                  ? "❌"
-                  : item.traditionalTools}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </section>
-)}
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>
 
           {/* SECTION 5: Pros & Cons */}
           <section className="space-y-4">
@@ -601,7 +613,7 @@ console.log("Review:", product.review);
               Frequently Asked Questions (FAQ)
             </h2>
             <div className="space-y-3">
-              {r.faqs.map((faq, index) => (
+              {r.faqs?.map((faq, index) => (
                 <div key={index} className="p-4 bg-slate-50 border border-slate-100 rounded-xl space-y-1">
                   <span className="block font-bold text-xs text-slate-800">
                     Q: {faq.question}

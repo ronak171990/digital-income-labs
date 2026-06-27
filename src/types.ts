@@ -27,15 +27,28 @@ export interface ReviewSection {
   cons: string[];
   verdict: string;
   faqs: { question: string; answer: string }[];
-  comparison?: {
-    feature: string;
-    oneManArmy: boolean | string;
-    traditionalTools: boolean | string;
-  }[];
-  useCases?: {
-    title: string;
-    description: string;
-  }[];
+  comparison: [
+  {
+    feature: "One Dashboard",
+    oneManArmy: true,
+    traditionalTools: false
+  }
+];
+useCases: [
+  {
+    title: "Faceless Affiliate Business",
+    description: "Build a TikTok Shop affiliate business without showing your face."
+  },
+  {
+    title: "Multiple Niches",
+    description: "Create content across Beauty, Tech, Fitness, Pets and more."
+  },
+  {
+    title: "Agency Services",
+    description: "Create affiliate video systems for clients and charge premium fees."
+  }
+],  
+
   recommendedFor?: string[];
   notIdealFor?: string[];
 }
