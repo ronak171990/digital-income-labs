@@ -3,11 +3,17 @@ import { Menu, X, ArrowRight, ShieldCheck, Cpu } from "lucide-react";
 
 interface NavbarProps {
   currentView: string;
+  currentParams: any;
   onNavigate: (view: string, params?: any) => void;
   isAdmin: boolean;
 }
 
-export default function Navbar({ currentView, onNavigate, isAdmin }: NavbarProps) {
+export default function Navbar({
+  currentView,
+  currentParams,
+  onNavigate,
+  isAdmin,
+}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
@@ -16,6 +22,7 @@ export default function Navbar({ currentView, onNavigate, isAdmin }: NavbarProps
     { name: "AI Tools", view: "category", params: "AI Tools" },
     { name: "Make Money Online", view: "category", params: "Make Money Online" },
     { name: "Passive Income", view: "category", params: "Passive Income" },
+    { name: "AI Resume Toolkit", view: "ai-resume-builder-toolkit" },
     { name: "Reviews", view: "reviews" },
     { name: "Blog", view: "blog" },
     { name: "About", view: "about" },
@@ -56,19 +63,23 @@ export default function Navbar({ currentView, onNavigate, isAdmin }: NavbarProps
           <div className="hidden lg:flex items-center space-x-1">
             {menuItems.map((item) => {
               const isActive =
-                currentView === item.view ||
-                (it.view === "category" &&
-                  currentView === "category" &&
-                  it.params === item.params);
+  item.view === "category"
+    ? currentView === "category" &&
+      currentParams === item.params
+    : currentView === item.view;
               return (
                 <button
                   key={item.name}
                   onClick={() => handleItemClick(item)}
-                  className={`px-3 py-1.5 rounded-full text-[13.5px] font-medium transition-all ${
-                    isActive
-                      ? "bg-slate-900 text-white font-semibold"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
-                  }`}
+                  className={`px-4 py-1.5 rounded-full text-[13.5px] font-medium transition-all whitespace-nowrap ${
+  item.view === "ai-resume-builder-toolkit"
+    ? currentView === "ai-resume-builder-toolkit"
+      ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-md"
+      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+    : isActive
+      ? "bg-slate-900 text-white font-semibold"
+      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+}`}
                   id={`nav-link-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   {item.name}
@@ -131,5 +142,3 @@ export default function Navbar({ currentView, onNavigate, isAdmin }: NavbarProps
     </nav>
   );
 }
-// Small typo fix variable alias
-const it = { view: "category", params: "" };

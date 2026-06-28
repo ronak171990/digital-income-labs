@@ -21,6 +21,7 @@ import BlogView from "./components/BlogView";
 import AdminView from "./components/AdminView";
 import StaticPages from "./components/StaticPages";
 import LeadMagnetView from "./components/LeadMagnetView";
+import AIResumeToolkitView from "./components/AIResumeToolkitView";
 
 const DATA_VERSION = "1.0.0";
 
@@ -201,6 +202,13 @@ useEffect(() => {
           setCurrentView("legal");
           setCurrentParams(type);
         }
+      } else if (
+        path === "/ai-resume-builder-toolkit" ||
+        path === "/ai-resume-builder-toolkit/" ||
+        hash === "#/ai-resume-builder-toolkit"
+      ) {
+        setCurrentView("ai-resume-builder-toolkit");
+        setCurrentParams(null);
       }
     };
 
@@ -238,7 +246,9 @@ useEffect(() => {
         window.history.pushState(null, "", `/blog/${params}`);
       } else if (view === "legal") {
         window.history.pushState(null, "", `/legal/${params}`);
-      }
+      } else if (view === "ai-resume-builder-toolkit") {
+        window.history.pushState(null, "", "/ai-resume-builder-toolkit");
+    }
     } catch (e) {
       console.warn("History API pushState failed, using fallback navigation", e);
     }
@@ -319,27 +329,38 @@ useEffect(() => {
           />
         );
 
-      case "review-detail":
-        const targetProduct = products.find((p) => p.slug === currentParams);
-        if (targetProduct) {
-          return (
-            <ReviewTemplateView
-              product={targetProduct}
-              products={products}
-              articles={articles}
-              onNavigate={handleNavigate}
-              onTrackClick={handleTrackClick}
-            />
-          );
-        }
-        // Fallback if not found
-        return (
-          <ReviewsView
-            products={products}
-            onNavigate={handleNavigate}
-            onTrackClick={handleTrackClick}
-          />
-        );
+      case "review-detail": {
+  const targetProduct = products.find(
+    (p) => p.slug === currentParams
+  );
+
+  if (targetProduct) {
+    return (
+      <ReviewTemplateView
+        product={targetProduct}
+        products={products}
+        articles={articles}
+        onNavigate={handleNavigate}
+        onTrackClick={handleTrackClick}
+      />
+    );
+  }
+
+  return (
+    <ReviewsView
+      products={products}
+      onNavigate={handleNavigate}
+      onTrackClick={handleTrackClick}
+    />
+  );
+}
+
+case "ai-resume-builder-toolkit":
+  return (
+    <AIResumeToolkitView
+      onNavigate={handleNavigate}
+    />
+  );
 
       case "blog":
         return (
@@ -402,11 +423,12 @@ useEffect(() => {
     <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans flex flex-col justify-between">
       <div>
         {/* Responsive Header */}
-        <Navbar 
-          currentView={currentView} 
-          onNavigate={handleNavigate} 
-          isAdmin={true} 
-        />
+        <Navbar
+  currentView={currentView}
+  currentParams={currentParams}
+  onNavigate={handleNavigate}
+  isAdmin={true}
+/>
 
         {/* Dynamic Navigation Content Viewport */}
         <main className="relative">
