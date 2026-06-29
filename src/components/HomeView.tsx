@@ -158,15 +158,7 @@ export default function HomeView({
   return (
     <>
     <Helmet>
-  <title>
-    The Digital Income Labs | AI Tools & Make Money Online
-  </title>
-
-  <meta
-    name="description"
-    content="Discover AI tools, side hustles, passive income ideas, and honest digital product reviews at The Digital Income Labs."
-  />
-
+    
   <meta
     name="keywords"
     content="AI tools, affiliate marketing, passive income, blogging, make money online, digital marketing"
@@ -174,10 +166,7 @@ export default function HomeView({
 
   <meta name="robots" content="index,follow" />
 
-  <link
-    rel="canonical"
-    href="https://thedigitalincomelabs.com/"
-  />
+  
 
   {/* Open Graph */}
   <meta property="og:type" content="website" />

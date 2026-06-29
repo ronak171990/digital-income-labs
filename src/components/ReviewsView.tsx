@@ -43,21 +43,7 @@ export default function ReviewsView({ products, onNavigate, onTrackClick }: Revi
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 animate-fade-in" id="reviews-gallery">
       
-      {/* SEO metadata */}
-      <Helmet>
-        <title>Digital Product Reviews | The Digital Income Labs</title>
-
-      <meta
-        name="description"
-        content="Read honest reviews of AI tools, affiliate marketing software, YouTube automation tools, and make money online products."
-      />
-
-      <link
-        rel="canonical"
-        href="https://thedigitalincomelabs.com/reviews"
-      />
-      </Helmet>
-
+      
       {/* Header Info */}
       <div className="text-center max-w-2xl mx-auto space-y-2">
         <h2 className="font-sans font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">

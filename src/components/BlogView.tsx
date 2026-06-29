@@ -228,18 +228,8 @@ export default function BlogView({ articles, products = [], selectedArticleSlug,
 
         {/* Dynamic SEO coordinates updates */}
         <Helmet>
-  <title>{activeArticle.title} | The Digital Income Labs</title>
 
-  <meta
-    name="description"
-    content={activeArticle.excerpt}
-  />
-
-  <link
-    rel="canonical"
-    href={`https://thedigitalincomelabs.com/blog/${activeArticle.slug}`}
-  />
-
+    
   {/* Open Graph */}
   <meta property="og:type" content="article" />
   <meta property="og:title" content={activeArticle.title} />
@@ -859,17 +849,8 @@ export default function BlogView({ articles, products = [], selectedArticleSlug,
       
       {/* SEO metadata */}
       <Helmet>
-  <title>Blog | The Digital Income Labs</title>
-
-  <meta
-    name="description"
-    content="Read the latest articles about AI tools, side hustles and passive income opportunities."
-  />
-
-  <link
-    rel="canonical"
-    href="https://thedigitalincomelabs.com/blog"
-  />
+ 
+  
 </Helmet>
 
       {/* Header Copy */}
