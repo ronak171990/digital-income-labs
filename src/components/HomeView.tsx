@@ -158,17 +158,91 @@ export default function HomeView({
   return (
     <>
     <Helmet>
-      <title>
-        The Digital Income Labs | AI Tools & Make Money Online
-      </title>
+  <title>
+    The Digital Income Labs | AI Tools & Make Money Online
+  </title>
 
-      <meta
-        name="description"
-        content="Discover AI tools, side hustles, passive income ideas, and honest digital product reviews at The Digital Income Labs."
-      />
+  <meta
+    name="description"
+    content="Discover AI tools, side hustles, passive income ideas, and honest digital product reviews at The Digital Income Labs."
+  />
 
-      <link rel="canonical" href="https://thedigitalincomelabs.com/" />
-    </Helmet>
+  <meta
+    name="keywords"
+    content="AI tools, affiliate marketing, passive income, blogging, make money online, digital marketing"
+  />
+
+  <meta name="robots" content="index,follow" />
+
+  <link
+    rel="canonical"
+    href="https://thedigitalincomelabs.com/"
+  />
+
+  {/* Open Graph */}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Digital Income Labs" />
+  <meta
+    property="og:description"
+    content="Discover AI tools, affiliate marketing, blogging, reviews and online income strategies."
+  />
+  <meta
+    property="og:url"
+    content="https://thedigitalincomelabs.com/"
+  />
+  <meta
+    property="og:image"
+    content="https://thedigitalincomelabs.com/og-image.jpg"
+  />
+
+  {/* Twitter */}
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+  <meta
+    name="twitter:title"
+    content="The Digital Income Labs"
+  />
+  <meta
+    name="twitter:description"
+    content="AI Tools, Affiliate Marketing & Passive Income"
+  />
+  <meta
+    name="twitter:image"
+    content="https://thedigitalincomelabs.com/og-image.jpg"
+  />
+
+  <script type="application/ld+json">
+{JSON.stringify({
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"The Digital Income Labs",
+  "url":"https://thedigitalincomelabs.com",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://thedigitalincomelabs.com/search?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+})}
+</script>
+
+<script type="application/ld+json">
+{JSON.stringify({
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"The Digital Income Labs",
+  "url":"https://thedigitalincomelabs.com",
+  "logo":"https://thedigitalincomelabs.com/logo.png",
+  "sameAs":[
+    "https://www.facebook.com/ronakcareerhub/",
+    "https://www.linkedin.com/in/ronak-patel1790/",
+    "https://www.youtube.com/@TheNeuroVerseX"
+  ]
+})}
+</script>
+
+</Helmet>
 
     <div className="sr-only">
       The Digital Income Labs

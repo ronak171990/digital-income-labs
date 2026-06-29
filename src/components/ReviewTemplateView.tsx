@@ -54,18 +54,120 @@ console.log("Review:", product.review);
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 animate-fade-in" id={`review-page-${product.slug}`}>
       <Helmet>
-        <title>{product.seoTitle}</title>
+  <title>{product.seoTitle}</title>
 
-        <meta
-          name="description"
-          content={product.shortDescription}
-        />
+  <meta
+    name="description"
+    content={product.shortDescription}
+  />
 
-        <link
-          rel="canonical"
-          href={`https://thedigitalincomelabs.com/reviews/${product.slug}`}
-        />
-        </Helmet>
+  <link
+    rel="canonical"
+    href={`https://thedigitalincomelabs.com/reviews/${product.slug}`}
+  />
+
+  {/* Open Graph */}
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={product.seoTitle} />
+  <meta property="og:description" content={product.shortDescription} />
+  <meta
+    property="og:url"
+    content={`https://thedigitalincomelabs.com/reviews/${product.slug}`}
+  />
+  <meta property="og:image" content={product.imageUrl} />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={product.seoTitle} />
+  <meta
+    name="twitter:description"
+    content={product.shortDescription}
+  />
+  <meta name="twitter:image" content={product.imageUrl} />
+
+  {/* Review Schema */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Review",
+
+      author: {
+        "@type": "Person",
+        name: "Ronak Patel"
+      },
+
+      publisher: {
+        "@type": "Organization",
+        name: "The Digital Income Labs",
+        url: "https://thedigitalincomelabs.com"
+      },
+
+      itemReviewed: {
+        "@type": "SoftwareApplication",
+        name: product.name,
+        image: product.imageUrl,
+        description: product.shortDescription,
+        applicationCategory: product.category,
+        operatingSystem: "Web"
+      },
+
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: product.rating,
+        bestRating: "5"
+      }
+    })}
+  </script>
+
+  <script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+
+    "mainEntity":
+      product.faqs?.map((faq) => ({
+        "@type": "Question",
+
+        "name": faq.question,
+
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      })) || []
+  })}
+</script>
+
+{/* Breadcrumb Schema */}
+<script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://thedigitalincomelabs.com"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Reviews",
+        item: "https://thedigitalincomelabs.com/reviews"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+        item: `https://thedigitalincomelabs.com/reviews/${product.slug}`
+      }
+    ]
+  })}
+</script>
+
+</Helmet>
 
       {/* Dynamic SEO Injector */}
       

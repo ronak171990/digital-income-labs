@@ -228,17 +228,97 @@ export default function BlogView({ articles, products = [], selectedArticleSlug,
 
         {/* Dynamic SEO coordinates updates */}
         <Helmet>
-  <title>Blog | </title>
+  <title>{activeArticle.title} | The Digital Income Labs</title>
 
   <meta
     name="description"
-    content="Read the latest articles on AI tools, side hustles, passive income ideas and digital products."
+    content={activeArticle.excerpt}
   />
 
   <link
     rel="canonical"
-    href="https://thedigitalincomelabs.com/blog"
+    href={`https://thedigitalincomelabs.com/blog/${activeArticle.slug}`}
   />
+
+  {/* Open Graph */}
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={activeArticle.title} />
+  <meta property="og:description" content={activeArticle.excerpt} />
+  <meta
+    property="og:url"
+    content={`https://thedigitalincomelabs.com/blog/${activeArticle.slug}`}
+  />
+  <meta
+    property="og:image"
+    content={activeArticle.pinterestImageUrl}
+  />
+
+  {/* Article Schema */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+
+      headline: activeArticle.title,
+
+      description: activeArticle.excerpt,
+
+      image: activeArticle.pinterestImageUrl,
+
+      author: {
+        "@type": "Person",
+        name: activeArticle.author
+      },
+
+      publisher: {
+        "@type": "Organization",
+        name: "The Digital Income Labs",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://thedigitalincomelabs.com/logo.png"
+        }
+      },
+
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://thedigitalincomelabs.com/blog/${activeArticle.slug}`
+      },
+
+      datePublished: activeArticle.date,
+
+      dateModified: activeArticle.date
+    })}
+  </script>
+
+  {/* Breadcrumb Schema */}
+<script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://thedigitalincomelabs.com"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://thedigitalincomelabs.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: activeArticle.title,
+        item: `https://thedigitalincomelabs.com/blog/${activeArticle.slug}`
+      }
+    ]
+  })}
+</script>
+
 </Helmet>
 
         {/* Hero Section Container */}
@@ -779,18 +859,18 @@ export default function BlogView({ articles, products = [], selectedArticleSlug,
       
       {/* SEO metadata */}
       <Helmet>
-        <title>Blog | The Digital Income Labs</title>
+  <title>Blog | The Digital Income Labs</title>
 
-      <meta
-        name="description"
-        content="Read the latest articles about AI tools, side hustles and passive income opportunities."
-      />
+  <meta
+    name="description"
+    content="Read the latest articles about AI tools, side hustles and passive income opportunities."
+  />
 
-      <link
-        rel="canonical"
-        href="https://thedigitalincomelabs.com/blog"
-      />
-      </Helmet>
+  <link
+    rel="canonical"
+    href="https://thedigitalincomelabs.com/blog"
+  />
+</Helmet>
 
       {/* Header Copy */}
       <div className="text-center max-w-2xl mx-auto space-y-3.5">
