@@ -36,23 +36,23 @@ export default function Navbar({
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          <div className="flex items-center shrink-0">
             {/* Logo */}
             <div
               onClick={() => onNavigate("home")}
               className="flex items-center gap-2 cursor-pointer group"
               id="nav-logo"
             >
-              <div className="h-9 w-9 bg-linear-to-tr from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white shadow-md shadow-blue-200 transition-transform group-hover:scale-105">
-                <Cpu className="h-5 w-5" />
+              <div className="h-11 w-11 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg transition-transform group-hover:scale-110">
+                <Cpu className="h-6 w-6" />
               </div>
               <div className="flex flex-col">
-                <span className="font-sans font-extrabold text-[17px] tracking-tight text-slate-900 leading-none">
+                <span className="font-sans font-extrabold text-[20px] tracking-tight text-slate-900 leading-none">
                   Digital Income Labs<span className="text-blue-600 font-bold">®</span>
                 </span>
-                <span className="text-[10px] text-slate-500 font-medium tracking-widest font-mono uppercase mt-0.5">
+                <span className="text-[11px] text-slate-500 font-medium tracking-widest font-mono uppercase mt-0.5">
                   Side Hustles & AI
                 </span>
               </div>
@@ -60,7 +60,7 @@ export default function Navbar({
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center gap-2">
             {menuItems.map((item) => {
               const isActive =
   item.view === "category"
@@ -71,7 +71,7 @@ export default function Navbar({
                 <button
                   key={item.name}
                   onClick={() => handleItemClick(item)}
-                  className={`px-4 py-1.5 rounded-full text-[13.5px] font-medium transition-all whitespace-nowrap ${
+                  className={`px-5 py-2 rounded-full text-[13.5px] font-medium transition-all whitespace-nowrap ${
   item.view === "ai-resume-builder-toolkit"
     ? currentView === "ai-resume-builder-toolkit"
       ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-md"
@@ -91,7 +91,7 @@ export default function Navbar({
           <div className="hidden lg:flex items-center space-x-3">
             <button
               onClick={() => onNavigate("reviews")}
-              className="inline-flex items-center gap-1.5 bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-xs hover:bg-blue-700 hover:shadow-md transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-semibold shadow-xs hover:bg-blue-700 hover:shadow-md transition-all cursor-pointer"
             >
               Explore Reviews
               <ArrowRight className="h-3.5 w-3.5" />
