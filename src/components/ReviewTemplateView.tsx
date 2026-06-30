@@ -482,6 +482,36 @@ console.log("Review:", product.review);
   </div>
 </section>
 
+{/* SECTION: Real World Use Cases */}
+{r.useCases && r.useCases.length > 0 && (
+  <section className="space-y-4">
+    <h2 className="font-sans font-extrabold text-2xl text-slate-900 tracking-tight">
+      Real-World Use Cases
+    </h2>
+
+    <span className="text-xs text-slate-400 block">
+      Here are some practical ways users can benefit from {product.name}.
+    </span>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {r.useCases.map((item, index) => (
+        <div
+          key={index}
+          className="bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-sm transition"
+        >
+          <h3 className="font-bold text-slate-900 text-sm mb-2">
+            {item.title}
+          </h3>
+
+          <p className="text-sm text-slate-600 leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
+
           {/* SECTION 5: Pros & Cons */}
           <section className="space-y-4">
             <h2 className="font-sans font-extrabold text-2xl text-slate-900 tracking-tight">
