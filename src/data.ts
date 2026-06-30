@@ -897,7 +897,7 @@ readingTime: "10 min read",
     regularPrice: "Retail Price: $197.00",
 
     salePrice:
-      "Founders Deal: $17.95 One-Time Payment (Limited-Time Launch Offer)",
+      "$17.95",
 
     couponCode: "",
 
